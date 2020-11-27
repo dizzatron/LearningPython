@@ -2,8 +2,11 @@ from tkinter import *
 import datetime
 
 root = Tk()
-root.maxsize(width=400, height=400)
-root.minsize(width=400, height=400)
+
+WIDTH = 400
+HEIGHT = 350
+root.maxsize(width=WIDTH, height=HEIGHT)
+root.minsize(width=WIDTH, height=HEIGHT)
 
 download_number = StringVar()
 speed_number = StringVar()
@@ -60,44 +63,43 @@ def download_time(argument_list):
     return formatted
 
 
-mainframe = Frame(root, width=400, height=400, bg="grey", border=15, relief=RAISED)
+mainframe = Frame(root, width=WIDTH, height=HEIGHT, bg="grey", border=15, relief=RAISED)
 mainframe.pack()
 
 # my frames to place widgets in
-download_frame = Frame(mainframe, bg="grey", width=400, height=100)
+download_frame = Frame(mainframe, bg="#453a36", width=WIDTH, height=100, relief=SUNKEN)
 download_frame.pack()
-speed_frame = Frame(mainframe, bg="grey", width=400, height=100)
+speed_frame = Frame(mainframe, bg="#453a36", width=WIDTH, height=100, relief=SUNKEN)
 speed_frame.pack()
-output_frame = Frame(mainframe, bg="grey", border=5, width=400, height=150, relief=SUNKEN)
+output_frame = Frame(mainframe, bg="#453a36", border=5, width=400, height=150, relief=SUNKEN)
 output_frame.pack()
 
 # the labels for the frames
-download_label = Label(download_frame, text="Download Size", bg="grey", font=('Arial', 10))
-download_label.place(relx=0.25, rely=0.1, relwidth=0.5, relheight=0.15)
-speed_label = Label(speed_frame, text="Speed", bg="grey", font=('Arial', 10))
-speed_label.place(relx=0.25, rely=0.1, relwidth=0.5, relheight=0.15)
+download_label = Label(download_frame, text="-- DOWNLOAD SIZE --", bg="#453a36", fg="white", font=('Arial', 10, "bold"))
+download_label.place(relx=0.3, rely=0.1, relwidth=0.4, relheight=0.25)
+speed_label = Label(speed_frame, text="----- SPEED -----", bg="#453a36", fg="white", font=('Arial', 10, "bold"), border=5)
+speed_label.place(relx=0.3, rely=0.1, relwidth=0.4, relheight=0.25)
 
-
-download_entry = Entry(download_frame, textvariable=download_number, bg="pink")
+download_entry = Entry(download_frame, textvariable=download_number, bg="#547d74")
 # download_entry.bind('<Return>', get_data)
-download_entry.place(relx=0.25, rely=0.3, relwidth=0.5)
+download_entry.place(relx=0.25, rely=0.4, relwidth=0.5)
 
-speed_entry = Entry(speed_frame, textvariable=speed_number, bg="pink")
+speed_entry = Entry(speed_frame, textvariable=speed_number, bg="#547d74")
 # speed_entry.bind('<Return>', get_data)
-speed_entry.place(relx=0.25, rely=0.3, relwidth=0.5)
+speed_entry.place(relx=0.25, rely=0.4, relwidth=0.5)
 
 # the buttons for the file size types and data entry
-button_kb = Button(download_frame, text="KB", width=6, height=1, bg="grey", command=lambda: get_buttons("KB"))
+button_kb = Button(download_frame, text="KB", width=9, height=1, bg="#7dada4", font=('Arial', 10, 'bold'), border=3, command=lambda: get_buttons("KB"))
 button_kb.place(relx=0.2, rely=0.7)
-button_mb = Button(download_frame, text="MB", width=6, height=1, bg="grey", command=lambda: get_buttons("MB"))
+button_mb = Button(download_frame, text="MB", width=9, height=1, bg="#7dada4", font=('Arial', 10, 'bold'), border=3, command=lambda: get_buttons("MB"))
 button_mb.place(relx=0.4, rely=0.7)
-button_gb = Button(download_frame, text="GB", width=6, height=1, bg="grey", command=lambda: get_buttons("GB"))
+button_gb = Button(download_frame, text="GB", width=9, height=1, bg="#7dada4", font=('Arial', 10, 'bold'), border=3, command=lambda: get_buttons("GB"))
 button_gb.place(relx=0.6, rely=0.7)
-button_kb2 = Button(speed_frame, text="KB", width=6, height=1, bg="grey", command=lambda: get_buttons2("KB"))
+button_kb2 = Button(speed_frame, text="KB", width=9, height=1, bg="#7dada4", font=('Arial', 10, 'bold'), border=3, command=lambda: get_buttons2("KB"))
 button_kb2.place(relx=0.2, rely=0.7)
-button_mb2= Button(speed_frame, text="MB", width=6, height=1, bg="grey", command=lambda: get_buttons2("MB"))
+button_mb2= Button(speed_frame, text="MB", width=9, height=1, bg="#7dada4", font=('Arial', 10, 'bold'), border=3, command=lambda: get_buttons2("MB"))
 button_mb2.place(relx=0.4, rely=0.7)
-button_gb2 = Button(speed_frame, text="GB", width=6, height=1, bg="grey", command=lambda: get_buttons2("GB"))
+button_gb2 = Button(speed_frame, text="GB", width=9, height=1, bg="#7dada4", font=('Arial', 10, 'bold'), border=3, command=lambda: get_buttons2("GB"))
 button_gb2.place(relx=0.6, rely=0.7)
 
 root.mainloop()
