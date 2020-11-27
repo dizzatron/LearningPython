@@ -39,7 +39,7 @@ def output_panel(input):
     hours_to_add = datetime.timedelta(hours=float_time)
     current_time = datetime.datetime.now()
     output = "Your download should finish at {}\nIt looks like your download will take {} hours.".format(current_time + hours_to_add, hours_to_add)
-    output_label = Label(output_frame, text=output, bg="pink", border=2, font=('Arial', 10))
+    output_label = Label(output_frame, text=output, bg="#547d74", border=2, font=('Arial', 10))
     output_label.place(relx=0, rely=0, relwidth=1, relheight=1)
 
 
